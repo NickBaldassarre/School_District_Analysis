@@ -2,11 +2,11 @@
 
 ## Project Overview
 
-### I will be assisting a city school district with an analysis of its schools. We will be looking at the relationships between school budgets, school sizes, and academic performance. We will also be removing grades that are suspect, and determining what changes occur to our final analysis.
+### I will be assisting a city school district with an analysis of its schools. We will be looking at school budgets, sizes, and types, and how they relate to academic performance. We will also be removing grades that are suspected of being dishonest, and determining what changes occur to our final analysis after those grades are replaced.
 
 ## Analysis
 
-In order to obtain more accurate data, we removed data that was suspected of academic dishonesty. We removed all grades from the 9th grade at Thomas High School by using the .loc method along with comparison operators to retrieve all rows that satisfied both conditions. We also imported NumPy in order to use the nan method to change all math and reading scores that satistfied both conditions to NaN.
+In order to obtain more accurate data, we removed data that was suspected of academic dishonesty. We removed all grade scores from the 9th grade at Thomas High School by using the .loc method along with comparison operators to retrieve all rows that satisfied both conditions. We also imported NumPy in order to use the nan method to change all math and reading scores that satistfied both conditions to NaN.
 
     student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"),["reading_score"]] = np.nan
     student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"),["math_score"]] = np.nan
@@ -67,12 +67,12 @@ We used this data to create new DataFrames which show each grade level in each s
 ## Results
 
 * The District Summary shows a slight dip in average scores after the removal of the data.
-* The School Summary shows a slight decrease in the scores from Thomas High School
-* Replacing the 9th grade scores from Thomas High School does not change Thomas's position relative to other schools as the chamge is negligible.
+* The School Summary shows a slight decrease in the scores from Thomas High School.
+* Replacing the 9th grade scores from Thomas High School does not change Thomas's position relative to other schools as the change is negligible.
 * Math and reading scores by grade are affected only in that Thomas shows NaN for 9th grade scores.
-* Scores by school spending see slightly a slight drop in the $631-$645 per student bin as that is the bin that Thomas is in.
-* Scores by school size see slightly a slight drop in the Medium (1000-1999) bin as that is the bin that Thomas is in.
-* Scores by school type see slightly a slight drop in the Charter bin as that is the bin that Thomas is in.
+* Scores by school spending see a slight drop in the $631-$645 per student bin as that is the bin that Thomas is in.
+* Scores by school size see a slight drop in the Medium (1000-1999) bin as that is the bin that Thomas is in.
+* Scores by school type see a slight drop in the Charter bin as that is the bin that Thomas is in.
 
 ## Summary
 
